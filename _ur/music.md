@@ -4,7 +4,7 @@
 
 layout: default
 lang: UR
-title: technology
+title: music
 ---
 {% for tag in site.tags %}
   {% if tag[0] == "urdu technology" %}

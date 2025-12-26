@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: UR
-title: Qawwal Rang
+title: قوال رنگ
 tag: urdu technology 
 ---
 
