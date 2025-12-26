@@ -20,10 +20,9 @@
 
 title: Deurdu
 description: A webportal featuring translated and original works in Deutsch, Urdu and English
-baseurl: ""
 url: https://fsheikh.github.io
 
-favicon: "/assets/images/favicon.ico"
+favicon: "assets/images/favicon.ico"
 
 # Multilingual support
 languages: ["EN", "DE", "UR"]
