@@ -1,0 +1,41 @@
+<header class="banner-header">
+    <!----
+    <div class="favicon">
+      <img src="{{ site.favicon }}" alt="Deurdu Favicon">
+    </div>
+-->
+    <div class="site-header">
+        <h1> ڈُردو </h1>
+        <h2> Dürdu </h2>
+    </div>
+    <div class = "header-content">
+        <div class="header-actions">
+            <div class="search">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="login">
+                <button>Login</button>
+            </div>
+            <div class="language-selector">
+                <details>
+                    <summary>
+                        {% if page.lang == 'EN' or page.lang == nil %}EN
+                        {% elsif page.lang == 'DE' %}DE
+                        {% elsif page.lang == 'UR' %}UR{% endif %}
+                    </summary>
+                    <div class="language-options">
+                        <a href="{{ site.baseurl }}/" class="lang-link">English (EN)</a>
+                        <a href="{{ site.baseurl }}/_de/" class="lang-link">Deutsch (DE)</a>
+                        <a href="{{ site.baseurl }}/_ur/" class="lang-link">اردو (UR)</a>
+                    </div>
+                </details>
+        </div>
+        </div>
+        <!-----
+        <div class="site-header">
+            <h2> Dürdu </h2>
+        </div>
+    -->
+        {% include nav.html %}
+    </div>
+</header>
