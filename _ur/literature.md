@@ -8,7 +8,7 @@ title: Literature
   {% if tag[0] == "urdu literature" %}
   <ul>
     {% for post in tag[1] %}
-      <li style="direction:rtl;font-size:24px;"><a href="{{ post.url }}">{{ post.title }}</a></li>
+      <li style="direction:rtl;font-size:24px;"><a href="{{ post.url | relative_url}}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
   {% endif %}

@@ -12,7 +12,7 @@ permalink: /_de/literature
   {% if tag[0] == "german literature" %}
   <ul>
     {% for post in tag[1] %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
   {% endif %}
