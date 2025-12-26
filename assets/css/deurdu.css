@@ -230,6 +230,14 @@ footer {
 /* These only apply to screens 768px and smaller */
 
 @media (max-width: 768px) {
+  .header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
   /* Scale down the main title */
   .banner-header h1 {
     font-size: 2rem !important;
