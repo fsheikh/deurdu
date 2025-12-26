@@ -229,56 +229,52 @@ footer {
 /* ========== MOBILE FIXES ONLY ========== */
 /* These only apply to screens 768px and smaller */
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .site-header h1 {
+      margin: 0;
+      font-size: 2.0rem;
+      color: $title-color;
+      direction: rtl;
+      font-family: 'Noto Nastaliq Urdu', 'Noto Naskh Urdu';
+      text-align: right;
+      display: inline-block;
+      padding: 0rem 1rem;
+  }
+  .site-header h2 {
+      margin: 0;
+      font-size: 2.0rem;
+      color: $title-color;
+      text-align: left;
+      float: left;
+  }
   .header-content {
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
   }
 
-  /* Scale down the main title */
-  .banner-header h1 {
-    font-size: 2rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 1rem !important;
-  }
-
-  .banner-header h2 {
-    font-size: 1.2rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 1rem !important;
-  }
-
-  /* Scale down the subtitle */
-  .banner-header p {
-    font-size: 1rem !important;
-    line-height: 1.3 !important;
-    margin-bottom: 15px !important;
-  }
-
-  /* Stack buttons vertically instead of side-by-side */
-  .banner-buttons {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 10px !important;
-  }
-
   .header-actions {
-    display: flex;
-    gap: 0.5rem;
+    display:flex;
+    padding: 2rem;
 
     input {
-        padding: 0.25rem;
-        border: 0.5px solid $border-color;
+      visibility: hidden;
     }
-
     button {
-      padding: 0.25rem 0.5rem;
-      background-color: green;
-      color: white;
-      border: 2px solid;
-      cursor: pointer;
+      visibility: hidden;
     }
+  }
+  .main-nav {
+    background-color: $nav-bg;
+    padding: 0;
+    font-size: 1.0rem;
+    padding: 1.0rem;
+    ul {
+      display: block;
+      list-style: none;
+      margin: 0;
+      padding: 0rem;
+    }
+  }
 }
