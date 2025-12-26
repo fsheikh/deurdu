@@ -131,7 +131,7 @@ body {
 .intro {
   margin: auto;
   text-align: center;
-  background-image: url(/assets/images/MasjidWazirKhan.jpg);
+  background-image: url(../images/MasjidWazirKhan.jpg);
   width: 1000px;
   height: 800px;
   color: white;
