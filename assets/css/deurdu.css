@@ -11,25 +11,27 @@ body {
 
 .site-header {
   background-color: $header-bg;
-  padding: 1rem;
+  font-size: 3.0rem;
+  display: inline-block;
+  float: left;
   
 }
-.site-header h1 {
+.sitetitle-urdu {
     margin: 0;
-    font-size: 3.0rem;
     color: $title-color;
     direction: rtl;
-    font-family: 'Noto Nastaliq Urdu', 'Noto Naskh Urdu';
-    float: right;
-    display: inline-block;
+    font-family: 'Noto Nastaliq Urdu', 'Noto Naskh Urdu', 'Urdu Typesetting';
 }
       
-.site-header h2 {
+.sitetitle-english {
     margin: 0;
-    font-size: 3.0rem;
     color: $title-color;
-    text-align: left;
-    float: left;
+    font-size: 2.5rem;
+}
+
+.sitetitle-divider {
+    margin: 0;
+    color: $title-color;
 }
     
 .header-actions {
@@ -52,12 +54,13 @@ body {
 
 .main-nav {
   background-color: $nav-bg;
-  padding: 1rem 0;
   font-size: 2.0rem;
-  
+  margin-top: 1.0rem;
+  margin-bottom: 2.0rem;
+  /*TODO: alignment of this block needs to be based on language*/ 
   ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -118,15 +121,15 @@ body {
 
 .header-content {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   flex-direction: row-reverse; /* This makes RTL layout */
+  margin-top: 2.0rem;
 }
 
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 15px; /* Space between elements */
 }
 .intro {
   margin: auto;
@@ -199,7 +202,7 @@ footer {
 }
 
 .language-options {
-    position: absolute;
+    position: relative;
     top: 100%;
     right: 0;
     background-color: white;
@@ -230,51 +233,24 @@ footer {
 /* These only apply to screens 768px and smaller */
 
 @media screen and (max-width: 768px) {
-  .site-header h1 {
-      margin: 0;
-      font-size: 2.0rem;
-      color: $title-color;
-      direction: rtl;
-      font-family: 'Noto Nastaliq Urdu', 'Noto Naskh Urdu';
-      text-align: right;
-      display: inline-block;
-      padding: 0rem 1rem;
-  }
-  .site-header h2 {
-      margin: 0;
-      font-size: 2.0rem;
-      color: $title-color;
-      text-align: left;
-      float: left;
-  }
+  
   .header-content {
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
+    display: flex;
   }
 
   .header-actions {
     display:flex;
-    padding: 2rem;
-
-    input {
-      visibility: hidden;
-    }
-    button {
-      visibility: hidden;
-    }
   }
+  
   .main-nav {
     background-color: $nav-bg;
-    padding: 0;
-    font-size: 1.0rem;
-    padding: 1.0rem;
+    font-size: 1.5rem;
     ul {
-      display: block;
+      display: flex;
+      flex-direction: column;
       list-style: none;
-      margin: 0;
-      padding: 0rem;
     }
   }
 }

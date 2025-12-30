@@ -5,9 +5,11 @@
     </div>
 -->
     <div class="site-header">
-        <h1> ڈُردو </h1>
-        <h2> Dürdu </h2>
+        <a href="{{ site.baseurl }}/" class="sitetitle-english">Dürdu</a>
+        <span class="settitle-divider" aria-hidden="true">|</span>
+        <a href="{{ site.baseurl }}/_ur/" class="sitetitle-urdu">ڈُردو</a>
     </div>
+    {% include nav.html %}
     <div class = "header-content">
         <div class="header-actions">
             <div class="search">
@@ -31,11 +33,5 @@
                 </details>
         </div>
         </div>
-        <!-----
-        <div class="site-header">
-            <h2> Dürdu </h2>
-        </div>
-    -->
-        {% include nav.html %}
     </div>
 </header>
