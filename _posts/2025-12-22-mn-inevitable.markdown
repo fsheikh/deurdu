@@ -25,9 +25,9 @@ Conversations can't be dropped
 
 <p>
 Already arduous was my life track <br>
-besides a collar of sorrow in my neck <br>
+Besides a collar of sorrow in my neck <br>
 Already cruel were citizens of the land <br>
-yet a burning desire to be a wreck
+Yet a burning desire to be a wreck
 </p>
 </div>
 
