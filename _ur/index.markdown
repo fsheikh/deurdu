@@ -11,7 +11,7 @@ title: home
   <img src="../assets/images/MasjidWazirKhan.jpg" alt="Masjid Wazir Khan Lahore" class="center">
 </div>
 
-<div class="content-blocks_ur">
-  <!-- Content will be loaded here -->
-  <p>ویب سائٹ زیر تعمیر ہے۔ برائے مہربانی چند روز بعد پھر چکر لگائیں</p>
+<div class="intro_urdu">
+  <p style="font-size : 20px"> ہنوز زیر تعمیر </p>
+:construction: :construction: :construction:
 </div>

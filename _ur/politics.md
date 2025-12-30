@@ -7,7 +7,12 @@ lang: UR
 title: politics
 ---
 
-<div class="intro_urdu">
-  <p style="font-size : 20px"> ہنوز زیر تعمیر </p>
-:construction: :construction: :construction:
-</div>
+{% for tag in site.tags %}
+  {% if tag[0] == "urdu politics" %}
+  <ul>
+    {% for post in tag[1] %}
+      <li style="direction:rtl;font-size:24px;"><a href="{{ post.url | relative_url}}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endfor %}
