@@ -4,5 +4,5 @@ lang: EN
 title: Technology
 permalink: /technology
 ---
-
-[QawwalRang-Code](https://github.com/fsheikh/QawwalRang)
+- [Caching effects on hetrogeneous multicore processors](_posts/2026-01-11-fs-cache-multicore.markdown)
+- [QawwalRang](https://github.com/fsheikh/QawwalRang)
