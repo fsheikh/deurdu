@@ -1,12 +1,13 @@
 ---
 layout: default
 lang: EN
-title: "Cache effects in hybrid multicore processors"
+title: Cache effects in hybrid multicore processors
 date:   2026-01-11
 tag: english technology
 ---
 
-Legacy software for symmetric multicore processors (SMP) was typically written with a small number of identical cores in mind. As the number of cores scale to beyond 20 cores on user workstations and much larger numbers available in cloud computing, some of the software design patterns might not scale that well with the increased compute resources. Moreover a significant number of multicore deployment today is a hybrid configuration where some CPUs are optimized for power efficiency while others can target higher performance, this *might* also result in an unknown environment for legacy software. Hybrid or heterogeneous compute model is pretty common now as seen with various ARM [big.Little](https://www.arm.com/technologies/big-little) processors or Intel i7 Raptor/Alder Lake [architecture]( https://en.wikipedia.org/wiki/Raptor_Lake)
+## Cache Effects in hybrid multicore processors
+Legacy software for symmetric multicore processors (SMP) was typically written with a small number of identical cores in mind. As the number of cores scale to beyond `20` cores on user workstations and much larger numbers available in cloud computing, some of the software design patterns might not scale that well with the increased compute resources. Moreover a significant number of multicore deployment today is a hybrid configuration where some CPUs are optimized for power efficiency while others can target higher performance, this *might* also result in an unknown environment for legacy software. Hybrid or heterogeneous compute model is pretty common now as seen with various ARM [big.Little](https://www.arm.com/technologies/big-little) processors or Intel i7 Raptor/Alder Lake [architecture]( https://en.wikipedia.org/wiki/Raptor_Lake)
 
 
 This note describes cache performance evaluations with a single threaded CPU bound function made to periodically run across various cores on a hybrid multicore system. Measurements were conducted on an Intel 13th Gen Intel(R) Core(TM) i7-13850HX processor using GNU Linux. The program was built with `O3` optimization level using Clang CPP compiler. Below snippet shows the function under evaluation, for brevity; main thread setting up this function to run with highest pthread priority under FIFO scheduling and someother boilerplate is removed from the code listing.  The last conditional in the function guards against any out-of-order execution ill-effects during longer execution cycles.
@@ -19,9 +20,6 @@ using namespace std;
 static constexpr size_t WIDTH = 1024;
 static constexpr size_t HEIGHT = 256;
 static uint64_t countingBuffer[HEIGHT][WIDTH];
-
-
-
 
 static void* count_then_hop_freerun(void* maxCoresArg)
 {
@@ -80,7 +78,7 @@ Number of available CPU Cores=28
     0.002999000 seconds sys
 ```
 
-![Busy Loop without Hopping](assets/images/busy_loop_nohopp.svg)
+![BusyLoopNoHopp]({{ site.baseurl}}/assets/images/busy_loop_nohopp.svg)
 
 Same function when run with forced code migration is shown below.
 ```cpp
@@ -143,20 +141,20 @@ Performance counter stats for './busy_loop_2d_hopp':
       15.468433000 seconds sys
 
 ```
-![Busy Loop with Hopping](assets/images/busy_loop_2d_hopp.svg)
+![BusyLoop2DNoHopp]({{site.baseurl}}/assets/images/busy_loop_2d_hopp.svg)
 
 Here we note a couple of interesting observations
 
 - Firstly, both smaller and performance cores are now indeed engaged.
 - As expected we have a high number of migrations and page faults
-- The contribution of system calls is more visible (0.73%) due to forced rescheduling via sleep and affinity routines.
+- The contribution of system calls is more visible `(0.73%)` due to forced rescheduling via sleep and affinity routines.
 - The percentage of cache misses actually decreased on smaller cores with a marginal increase on performance cores. This is noteworthy, as there was a manyfold increase in the actual number of cache references, most likely from kernel calls, which were still served from the cache. Here we also see advantages of cache coherence where an indirect miss from L1 private cache can still be served from higher level of L2/L3 shared caches.
 
 
 Now we are ready to see the cache impact as the buffer size grows.
-![Cache performance](assets/images/cache_misses_percentage.png)
+![CacheMiss]({{ site.baseurl}}/assets/images/cache_misses_percentage.png)
 
-We can see that cache coherence works quite well as long as the buffer size is less than about half of total cache size (30MB on this system). We also note that once the buffer size is comparable to actual cache available on the system smaller cores tend to spend much more time waiting for memory compared to performance cores. On performance most of the cache overhead originates from system calls, something which can be clearly seen upon running 64MB counting buffer configuration with affinity and sleep routines.
+We can see that cache coherence works quite well as long as the buffer size is less than about half of total cache size (`30MB` on this system). We also note that once the buffer size is comparable to actual cache available on the system smaller cores tend to spend much more time waiting for memory compared to performance cores. On performance most of the cache overhead originates from system calls, something which can be clearly seen upon running `64MB` counting buffer configuration with affinity and sleep routines.
 
 ```bash
     19,673,428,160      cpu_atom/cache-references/                                              (100.00%)
