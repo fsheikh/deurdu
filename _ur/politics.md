@@ -6,7 +6,7 @@ layout: default
 lang: UR
 title: politics
 ---
-
+<div class="content-blocks_ur">
 {% for tag in site.tags %}
   {% if tag[0] == "urdu politics" %}
   <ul>
@@ -16,3 +16,4 @@ title: politics
   </ul>
   {% endif %}
   {% endfor %}
+  </div>

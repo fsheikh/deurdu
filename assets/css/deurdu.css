@@ -56,6 +56,8 @@ body {
   background-color: $nav-bg;
   font-size: 2.0rem;
   margin-top: 1.0rem;
+  margin-left: 14.0rem;
+  margin-right: 14.0rem;
   margin-bottom: 2.0rem;
   /*TODO: alignment of this block needs to be based on language*/ 
   ul {
@@ -66,7 +68,7 @@ body {
     padding: 0;
     
     li {
-      margin: 0 1.5rem;
+      margin: 0 2.0rem;
       text-decoration: none;
       a {
         color: white;
@@ -158,7 +160,12 @@ body {
     display: block;
     direction: rtl;
     font-family: 'Noto Nastaliq Urdu', 'Noto Naskh Urdu';
-    font-size: 20px;
+    font-size: 14px;
+    line-height: 60px;
+    li {
+      font-size: 14px;
+      line-height: 40px;
+    }
 }
 footer {
   background-color: $footer-bg;
