@@ -6,6 +6,7 @@ layout: default
 lang: UR
 title: music
 ---
+<div class="content-blocks_ur">
 {% for tag in site.tags %}
   {% if tag[0] == "urdu technology" %}
   <ul>
@@ -15,3 +16,4 @@ title: music
   </ul>
   {% endif %}
   {% endfor %}
+  </div>

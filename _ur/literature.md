@@ -3,6 +3,7 @@ layout: default
 lang: UR
 title: Literature
 ---
+<div class="content-blocks_ur">
 
 {% for tag in site.tags %}
   {% if tag[0] == "urdu literature" %}
@@ -13,3 +14,4 @@ title: Literature
   </ul>
   {% endif %}
 {% endfor %}
+</div>
