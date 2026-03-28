@@ -11,29 +11,31 @@ body {
 
 .site-header {
   background-color: $header-bg;
-  font-size: 3.0rem;
-  display: inline-block;
-  float: left;
-  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1.0rem;
+  white-space: nowrap;
 }
 .sitetitle-urdu {
     margin: 0;
     color: $title-color;
     direction: rtl;
     font-family: 'Noto Nastaliq Urdu', 'Noto Naskh Urdu', 'Urdu Typesetting';
+    font-size: 3.5rem;
+    display: inline-block;
+    vertical-align: top;
+    transform: translateY(-1.0rem);
 }
       
 .sitetitle-english {
     margin: 0;
     color: $title-color;
     font-size: 2.5rem;
+    display: inline-block;
+    vertical-align: top;
 }
 
-.sitetitle-divider {
-    margin: 0;
-    color: $title-color;
-}
-    
 .header-actions {
   display: flex;
   gap: 1rem;
@@ -56,16 +58,17 @@ body {
   background-color: $nav-bg;
   font-size: 2.0rem;
   margin-top: 1.0rem;
-  margin-left: 14.0rem;
-  margin-right: 14.0rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2.0rem;
-  /*TODO: alignment of this block needs to be based on language*/ 
+  max-width: 100%;
   ul {
     display: flex;
     justify-content: center;
     list-style: none;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
     
     li {
       margin: 0 2.0rem;
@@ -124,10 +127,13 @@ body {
 
 .header-content {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: center;
-  flex-direction: row-reverse; /* This makes RTL layout */
+  flex-direction: row; /* This makes RTL layout */
   margin-top: 2.0rem;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  flex-wrap: wrap;
 }
 
 .header-actions {
@@ -240,25 +246,34 @@ footer {
 /* ========== MOBILE FIXES ONLY ========== */
 /* These only apply to screens 768px and smaller */
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
+  .site-header {
+    font-size: 1.5rem;
+    gap: 0.25rem;
+  }
+ 
+  .main-nav {
+    font-size: 1.2rem;
+  }
+ 
+  .main-nav li {
+    margin: 0 1rem;
+  }
   
   .header-content {
+    justify-content: center;
     flex-direction: column;
-    flex-wrap: wrap;
-    display: flex;
   }
+}
 
+@media (max-width: 480px) {
   .header-actions {
-    display:flex;
+    flex-direction: column;
+    width: 100%;
   }
   
-  .main-nav {
-    background-color: $nav-bg;
-    font-size: 1.5rem;
-    ul {
-      display: flex;
-      flex-direction: column;
-      list-style: none;
-    }
+  .header-actions input,
+  .header-actions button {
+    width: 100%;
   }
 }
