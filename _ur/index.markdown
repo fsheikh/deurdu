@@ -5,10 +5,11 @@
 layout: default
 lang: UR
 title: home
+image: "assets/images/MasjidWazirKhan.jpg"
+image_alt: "Masjid Wazir Khan Lahore"
 ---
 <div class="intro_urdu">
   <p style="font-size:24px"> ڈردو ایک ویب پورٹل ہے جس پر تراجم کیساتھ کیساتھ جرمن، اردو اور انگریزی زبان میں نئے مضامین شائع کئے جاتے ہیں</p>
-  <img src="../assets/images/MasjidWazirKhan.jpg" alt="Masjid Wazir Khan Lahore" class="center">
 </div>
 
 <div class="intro_urdu">
